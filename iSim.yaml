@@ -69,7 +69,7 @@ instances:
   winWebAppRO5_2:
     <<: *ro1
     maintWindow: *mwB
-    addDrives:
+    appDrives:
       d: 200
       e: 400
     

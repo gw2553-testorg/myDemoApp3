@@ -1,0 +1,75 @@
+
+template:
+  serverAppInfo: &srvAppInfo
+    appFunctionType: interactive    # [ interactive | batch ]
+    appName:  demoApp          # [ Name of Application ]
+    businessUnit: ISG-BIA      # [ e.g. ISG-BIA] 
+    eccP1Restore: n      # [y|n] 
+    envType: prod          # [prod|tpt|test|etest|dev]
+    operationalHours: '24x7'  # [24x7|9-5|hardware|rogue]
+    managementLevel:  '24x7'  # [24x7|9-5|hardware|rogue] 
+    recoveryTier: 2      # [0-9] 
+    priContact: contact1        # [email contact group] 
+    secContact: contact2        # [email contact group]
+    localAdmins: myAdminGroup1        # Local adimins group
+   
+  mainWinA: 
+    maintWindow: &mwA 
+      day: mon              #[mon,tue,wed,thu,fri,sat,sun]
+      window: '0200'          #[0200|0600|1000|1400|1800|2200] 
+      SMStype: prod          # [ prod, staging, earlyAdopter, preprod, test ]
+      
+  mainWinB: 
+    maintWindow: &mwB  
+      day: tue              #[mon,tue,wed,thu,fri,sat,sun]
+      window: '0200'    #[0200|0600|1000|1400|1800|2200] 
+      SMStype: prod          # [ prod, staging, earlyAdopter, preprod, test ]
+    
+  webAppServer: &webAppType1
+    <<: *srvAppInfo
+    eSHS: is_server_windows_vm
+    size: '2/8'                # [ 2/2 2/4 2/6 2/8 2/16 4/8 4/16 4/24]
+    function: APP            # [ APP | DBS | WEB | etc... ] - (Defatult APP)
+    bim: 2008R2WebApp                  # [ 2008SP2Base|2008SP2WebApp|2008R2Base|2008R2WebApp|2012R2Base|2012R2WebApp ] 
+
+instances:
+  winWebAppGL1_1: &gl1
+    <<: *webAppType1
+    dataCenter: GL          # [ GL | RO | Description (other) ]
+    maintWindow: *mwA
+  
+  winWebAppGL2_1:
+    <<: *gl1
+    
+  winWebAppGL3_1:
+    <<: *gl1
+    maintWindow: *mwB
+    
+  winWebAppGL4_1:
+    <<: *gl1
+    maintWindow: *mwB
+    
+  winWebAppRO1_1: &ro1
+    <<: *webAppType1
+    dataCenter: RO          # [ GL | RO | Description (other) ]
+    maintWindow: *mwA
+  
+  winWebAppRO2_1:
+    <<: *ro1
+    
+  winWebAppRO3_1:
+    <<: *ro1
+    maintWindow: *mwB
+ 
+  winWebAppRO4_1:
+    <<: *ro1
+    maintWindow: *mwB
+    
+  nasAppShare1: 
+    eSHS: is_storage_nas
+    dataCenter: GL          # [ GL | RO | Description (other) ]
+    envType:  prod            # [ prod or nonprod ]
+    clientOS: WIN            # [ WIN or UNIX or BOTH ] 
+    size: 1000                # [ Size in GB ]
+    backup: snapMirror              # [ localSnap (default) or snapVault (snap to opposing DC) or snapMirror (mirror to opposing DC)]
+    snapMirrorFreq: 4hr      # [ 15min, 1hr, 4hr, 8hr, 12hr, 24hr (default) ]

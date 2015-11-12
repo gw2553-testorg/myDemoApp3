@@ -64,7 +64,7 @@ instances:
   winWebAppRO4_1:
     <<: *ro1
     maintWindow: *mwB
-    size: '4/16'
+    size: '4/20'
     
   winWebAppRO5_1:
     <<: *ro1

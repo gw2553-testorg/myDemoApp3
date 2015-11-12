@@ -66,6 +66,10 @@ instances:
     maintWindow: *mwB
     size: '4/16'
     
+  winWebAppRO5_1:
+    <<: *ro1
+    maintWindow: *mwB
+    
   nasAppShare1: 
     eSHS: is_storage_nas
     dataCenter: GL          # [ GL | RO | Description (other) ]

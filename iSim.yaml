@@ -69,6 +69,9 @@ instances:
   winWebAppRO5_1:
     <<: *ro1
     maintWindow: *mwB
+    addDrives:
+      d: 200
+      e: 400
     
   nasAppShare1: 
     eSHS: is_storage_nas

@@ -43,9 +43,10 @@ instances:
     custom: 
       - I need package x
     
-  winWebAppGL3_2:
+  winWebAppGL3_3:
     <<: *gl1
     maintWindow: *mwB
+    bim: 2008R2WebApp
     
   winWebAppGL4_2:
     <<: *gl1

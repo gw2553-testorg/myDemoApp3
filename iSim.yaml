@@ -40,6 +40,8 @@ instances:
   
   winWebAppGL2_2:
     <<: *gl1
+    custom: 
+      - I need package x
     
   winWebAppGL3_2:
     <<: *gl1

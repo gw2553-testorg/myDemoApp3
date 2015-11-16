@@ -47,6 +47,7 @@ instances:
     <<: *gl1
     maintWindow: *mwB
     bim: 2008R2WebApp
+    size: '4/24'
     
   winWebAppGL4_2:
     <<: *gl1

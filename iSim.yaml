@@ -38,7 +38,7 @@ instances:
     eSHS: is_network_f5_ltm
     dataCenter: GL
     pool:
-      - nasAppShare1
+      - winWebAppGL1_2
   
   winWebAppGL1_2: &gl1
     <<: *webAppType1

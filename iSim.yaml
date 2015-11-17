@@ -36,7 +36,7 @@ instances:
 
   ltm1:
     eSHS: is_network_f5_ltm
-    dataCenter: GL
+    dataCenter: RO
     pool:
       - winWebAppGL1_2
   

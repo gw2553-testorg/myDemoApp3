@@ -14,7 +14,7 @@ template:
     localAdmins: myAdminGroup1        # Local adimins group
    
   mainWinA: 
-    maintWindow: &mwA 
+    maintWindow: &mwA  
       day: mon              #[mon,tue,wed,thu,fri,sat,sun]
       window: '0200'          #[0200|0600|1000|1400|1800|2200] 
       SMStype: prod          # [ prod, staging, earlyAdopter, preprod, test ]

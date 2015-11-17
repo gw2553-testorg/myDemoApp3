@@ -37,7 +37,7 @@ instances:
   gtm1:
     eSHS: is_network_f5_gtm
     pool:
-      - ltm1
+      - winWebAppGL1_2
       
   ltm1:
     eSHS: is_network_f5_ltm

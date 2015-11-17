@@ -33,6 +33,13 @@ template:
     bim: 2012R2WebApp                  # [ 2008SP2Base|2008SP2WebApp|2008R2Base|2008R2WebApp|2012R2Base|2012R2WebApp ] 
 
 instances:
+
+  ltm1:
+    eSHS: is_network_f5_ltm
+    dataCenter: GL
+    pool:
+      - winWebAppGL1_2
+  
   winWebAppGL1_2: &gl1
     <<: *webAppType1
     dataCenter: GL          # [ GL | RO | Description (other) ]

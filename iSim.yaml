@@ -51,6 +51,7 @@ instances:
     <<: *gl1
     appDrives:
       d: 100
+      x: 10000
     custom: 
       - I need package x
     

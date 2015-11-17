@@ -46,7 +46,7 @@ instances:
     maintWindow: *mwA
     keepApartFrom:
       - winWebAppGL2_2
-      - winWebAppGL3_3
+      - winWebAppGL3_9
   
   winWebAppGL2_2:
     <<: *gl1

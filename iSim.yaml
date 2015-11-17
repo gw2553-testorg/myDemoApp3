@@ -1,6 +1,6 @@
 
 template:
-  serverAppInfo: &srvAppInfo
+  serverAppInfo: &srvAppInfo 
     appFunctionType: interactive    # [ interactive | batch ]
     appName:  demoApp          # [ Name of Application ]
     businessUnit: ISG-BIA      # [ e.g. ISG-BIA]  

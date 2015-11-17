@@ -49,6 +49,8 @@ instances:
   
   winWebAppGL2_2:
     <<: *gl1
+    appDrives:
+      d: 100
     custom: 
       - I need package x
     

@@ -45,6 +45,7 @@ instances:
     dataCenter: GL          # [ GL | RO | Description (other) ]
     maintWindow: *mwA
     keepApartFrom:
+      -winWebAppGL2_2
   
   winWebAppGL2_2:
     <<: *gl1
